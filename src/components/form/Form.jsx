@@ -1,4 +1,6 @@
-const Form = ({ user, setUser }) => {
+import { ACTIONS_USER } from '../../actions/actions-user';
+
+const Form = ({ dispatch }) => {
 	return (
 		<div>
 			<div>
@@ -7,7 +9,12 @@ const Form = ({ user, setUser }) => {
 					type='text'
 					name=''
 					id=''
-					onChange={e => putName(user, setUser, e.target.value)}
+					onChange={e =>
+						dispatch({
+							type: ACTIONS_USER.NAME,
+							payload: e.target.value
+						})
+					}
 				/>
 			</div>
 			<div>
@@ -16,7 +23,12 @@ const Form = ({ user, setUser }) => {
 					type='text'
 					name=''
 					id=''
-					onChange={e => putSurname(user, setUser, e.target.value)}
+					onChange={e =>
+						dispatch({
+							type: ACTIONS_USER.SURNAME,
+							payload: e.target.value
+						})
+					}
 				/>
 			</div>
 			<div>
@@ -25,12 +37,20 @@ const Form = ({ user, setUser }) => {
 					type='checkbox'
 					name=''
 					id=''
-					onChange={e => putActive(user, setUser, e.target.checked)}
+					onChange={e =>
+						dispatch({
+							type: ACTIONS_USER.ACTIVE,
+							payload: e.target.checked
+						})
+					}
 				/>
 			</div>
 		</div>
 	);
 };
+
+export default Form;
+
 // const putName = (user, setUser, newName) => {
 // 	setUser({
 // 		...user,
@@ -56,4 +76,3 @@ const Form = ({ user, setUser }) => {
 // 		});
 // 	}
 // };
-export default Form;

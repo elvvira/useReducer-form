@@ -8,7 +8,7 @@ const Result = ({ user }) => {
 			<h2>
 				surname: <span>{user.surname}</span>
 			</h2>
-			<h2>{user.active}</h2>
+			<h2>{user.active ? 'Active' : 'Inactive'}</h2>
 		</div>
 	);
 };

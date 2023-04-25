@@ -1,13 +1,18 @@
+import { useReducer } from 'react';
 import Form from './components/form/Form';
 import Result from './components/result/Result';
-import { useUser } from './hooks/useUser';
+import { userReducer } from './reducers/userReducer';
 
 const App = () => {
-	const [user, dispatch] = useUser();
+	const [user, dispatch] = useReducer(userReducer, {
+		name: '',
+		surname: '',
+		active: false
+	});
 	return (
 		<div>
-			<Form user={user} setUser={setUser} />
-			<Result user={user} setUser={setUser} />
+			<Form dispatch={dispatch} />
+			<Result user={user} />
 		</div>
 	);
 };

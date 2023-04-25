@@ -1,21 +1,21 @@
 import { ACTIONS_USER } from '../actions/actions-user';
 
-export const userReducer = (user, action) => {
-	switch (action) {
+export const userReducer = (user, { type, payload }) => {
+	switch (type) {
 		case ACTIONS_USER.NAME:
 			return {
 				...user,
-				name: newName
+				name: payload
 			};
 		case ACTIONS_USER.SURNAME:
 			return {
 				...user,
-				surname: newSurName
+				surname: payload
 			};
 		case ACTIONS_USER.ACTIVE:
 			return {
 				...user,
-				active: 'active'
+				active: payload
 			};
 
 		default:
