@@ -31,22 +31,29 @@ const Form = ({ user, setUser }) => {
 		</div>
 	);
 };
-const putName = (user, setUser, newName) => {
-	setUser({
-		...user,
-		name: newName
-	});
-};
-const putSurname = (user, setUser, newSurName) => {
-	setUser({
-		...user,
-		surname: newSurName
-	});
-};
-const putActive = (user, setUser, isActive) => {
-	setUser({
-		...user,
-		active: isActive
-	});
-};
+// const putName = (user, setUser, newName) => {
+// 	setUser({
+// 		...user,
+// 		name: newName
+// 	});
+// };
+// const putSurname = (user, setUser, newSurName) => {
+// 	setUser({
+// 		...user,
+// 		surname: newSurName
+// 	});
+// };
+// const putActive = (user, setUser, isActive) => {
+// 	if (isActive) {
+// 		setUser({
+// 			...user,
+// 			active: 'active'
+// 		});
+// 	} else {
+// 		setUser({
+// 			...user,
+// 			active: 'inactive'
+// 		});
+// 	}
+// };
 export default Form;
